@@ -1,0 +1,12 @@
+@funcionarios.map do |funcionario|
+  {
+    id: funcionario.id,
+   name: funcionario.name,
+   position: funcionario.position,
+   salary:funcionario.salary,
+   manager: Manager.all.find_by(id: funcionario.manager_id).name
+   
+  }
+
+end
+

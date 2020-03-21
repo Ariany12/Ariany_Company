@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_20_180820) do
+ActiveRecord::Schema.define(version: 2020_03_20_225856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "funcionarios", force: :cascade do |t|
-    t.string "funcionario_id"
     t.string "name"
     t.string "position"
     t.integer "salary"
@@ -25,16 +24,14 @@ ActiveRecord::Schema.define(version: 2020_03_20_180820) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "g_managers", force: :cascade do |t|
-    t.string "funcionario_id"
+  create_table "gmanagers", force: :cascade do |t|
     t.string "name"
-    t.integer "salary"
+    t.string "salary"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "managers", force: :cascade do |t|
-    t.string "funcionario_id"
     t.string "name"
     t.integer "salary"
     t.string "gmanager_id"
